@@ -1,9 +1,15 @@
-class ArticleModel{
-  String? image;
-  String title;
-  String description;
-  ArticleModel({required this.title, required this.image, required this.description});
-  factory ArticleModel.fromjson(json){
-    return ArticleModel(title: json['title'], image: json['urlimage'], description: json['description']);
+class ArticleModel {
+  final String? image;
+  final String title;
+  final String? description;
+
+  ArticleModel({required this.image, required this.title, required this.description});
+
+  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+    return ArticleModel(
+      image: json['urlToImage'], // تأكد من تطابق اسم الحقل مع هيكل بيانات API
+      title: json['title'],
+      description: json['description'],
+    );
   }
 }

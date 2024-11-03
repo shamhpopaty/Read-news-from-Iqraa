@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                     leading: Icon(Icons.newspaper),
                     title: Text( "Last_News"),
                     onTap: () {
-                      Get.to(()=>NewsScreen());
+                      Get.to(()=>NewsScreen(category: 'general',));
                     },
                   ),
                   ListTile(
